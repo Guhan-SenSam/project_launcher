@@ -1,0 +1,47 @@
+{
+  "required_api_version": "2",
+  "name": "Project Launcher",
+  "description": "Lists all git repositories in a root file, then opens with any IDE",
+  "developer_name": "Guhan SenSam",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "code_kw",
+      "type": "keyword",
+      "name": "Trigger",
+      "description": "Lists all git repositories in a root file, then opens with any IDE",
+      "default_value": "edit"
+    },
+    {
+      "id": "root_folder",
+      "type": "text",
+      "name": "Root folder",
+      "description": "Where to search the git projects",
+      "default_value": "~/Code"
+    },
+    {
+      "id": "cache_duration",
+      "type": "text", 
+      "name": "Cache duration",
+      "description": "How long to cache the git projects in seconds",
+      "default_value": "3600"
+    },
+    {
+      "id": "editors",
+      "type": "text",
+      "name": "Editors",
+      "description": "Comma-separated list of editor commands (e.g. code,cursor,nvim)",
+      "default_value": "code,cursor"
+    },
+    {
+      "id": "confidence_threshold",
+      "type": "text",
+      "name": "Confidence Threshold",
+      "description": "Minimum confidence score (0-1) for search results before reverting to default. E.g., 0.1",
+      "default_value": "0.1"
+    }
+  ]
+}
