@@ -209,8 +209,10 @@ class KeywordQueryEventListener(EventListener):
                         on_enter=RenderResultListAction(
                             [
                                 ExtensionResultItem(
-                                    icon=editor_icons.get(
-                                        editor.split()[0], "images/icon.png"
+                                    icon=next(
+                                        (icon for editor_name, icon in editor_icons.items() 
+                                         if editor_name in editor.lower()),
+                                        "images/icon.png"
                                     ),
                                     name=editor,
                                     description=f"Open {project} with {editor}",
